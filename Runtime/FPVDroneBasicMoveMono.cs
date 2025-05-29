@@ -30,6 +30,13 @@ public class FPVDroneBasicMoveMono : MonoBehaviour
     public float m_throttleBackSpeed = 0.1f;
 
 
+    public void SetDoubleJoystick(Vector2 leftJoystick, Vector2 rightJoystick)
+    {
+        m_throttleFrontPercent = leftJoystick.y;
+        m_rotateLeftRightPercent = leftJoystick.x;
+        m_pitchBackForwardPercent = rightJoystick.y;
+        m_rollLeftRightPercent = rightJoystick.x;
+    }
     public void SetRotateLeftRight(float percent)
     {
         m_rotateLeftRightPercent = percent;
