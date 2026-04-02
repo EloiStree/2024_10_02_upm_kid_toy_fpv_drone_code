@@ -36,12 +36,12 @@ public class GrowingGravity : MonoBehaviour
         Vector3 gravity = Vector3.down * currentGravityForce;
 
         // Smoothly apply gravity
-        rb.velocity += gravity * Time.fixedDeltaTime;
+        rb.linearVelocity += gravity * Time.fixedDeltaTime;
 
         // Limit the maximum fall speed to avoid falling too fast
-        if (rb.velocity.y < -maxFallSpeed)
+        if (rb.linearVelocity.y < -maxFallSpeed)
         {
-            rb.velocity = new Vector3(rb.velocity.x, -maxFallSpeed, rb.velocity.z);
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, -maxFallSpeed, rb.linearVelocity.z);
         }
     }
 }
